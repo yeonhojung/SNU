@@ -1,0 +1,20 @@
+1. import 과정
+2. data_set을 다운로드하고 , batch_size 를 정함
+3. train, val을 위한 과정
+4. 실행하는 파일을 저장하고 현재시간에 맞춰 실행하기 위함
+5. device 에 올려서 gpu로 계산하기 위함, net = Wide_resnet(28,2,0.3,10) 저장
+6. train_model 저장하여 학습시키기 위함 
+7. test_model 저장, 최종 test
+8. model의 parameter 지정 
+9. history1을 변수명으로 지정하여 train시키기 ; train(model, mode)
+10. accuracy와 loss를 그래프로 시각화하기 위함
+11. wide_resnet 28x2 에 대한 test 결과값 산출
+
+-----------------
+12. pruning과정을 겪어보자
+prune_net = Wide_ResNet(28, 2, 0.3, 10).to(device) ; 기존의 net과 동일한 모델이지만 net이 아닌 prune_net으로 저장해보자
+check_prune = torch.load("./saved_model/resnet28x2.pth") ; 기존에 200epochs로 학습한 모델을 check_prune으로 지정하여 load해보겠다.
+prune_net.load_state_dict(check_prune['state_dict']) ; state_dict값을 불러와서 prune_net을 학습하겠다
+
+13. 각각의 node에 대해서 중요도 낮은 변수를 제거하는 과정
+14. history2
