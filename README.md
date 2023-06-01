@@ -7,7 +7,7 @@ python self-study
 ### 간편 Git 사용 방법
   - Git clone
 ```
-git clone https://github.com/yeonhojung/python.git
+git clone https://github.com/yeonhojung/SNU.git
 ```
   - Git 다운받기
 ```
